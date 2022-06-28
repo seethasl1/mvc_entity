@@ -1,0 +1,5 @@
+﻿@model IEnumerable<mvc_entity.Models.Customer>
+@foreach(var item in Model)
+{
+    @Html.Partial("_Customer", item);
+}

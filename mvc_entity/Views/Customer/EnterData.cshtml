@@ -1,0 +1,79 @@
+﻿@model mvc_entity.ViewModel.vmcust_order
+    @using mvc_entity.Models;
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>EnterData</title>
+</head>
+<script src="~/Scripts/jquery-3.4.1.js"></script>
+<script src="~/Scripts/jquery.validate.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+<body>
+    <div>
+        @using (Html.BeginForm("submit", "Customer", FormMethod.Post))
+        {
+            <i>Customer ID:</i>@Html.TextBoxFor(m => m.cust.custid)
+            <br />
+
+            @Html.ValidationMessageFor(x => x.cust.custid) <br />
+            <i>Customer Name:</i>@Html.TextBoxFor(m => m.cust.custname) <br />
+            @Html.ValidationMessageFor(x => x.cust.custname) <br />
+            @*<i>Customer Name:</i>@Html.TextBoxFor(m => m.Age) <br />
+            @Html.ValidationMessageFor(x => x.Age) <br />
+            <i>Customer Name:</i>@Html.TextBoxFor(m => m.place) <br />
+            @Html.ValidationMessageFor(x => x.place) <br />
+            <i>Customer salary:</i>@Html.TextBoxFor(m => m.salary) <br />
+            @Html.ValidationMessageFor(x => x.salary) <br />*@
+            <@*i>Department:</i>@Html.DropDownListFor(m => m.select_dept,
+new SelectList(Enum.GetValues(typeof(dept))),
+"Select Department") <br />
+            <i>State:</i>@Html.DropDownListFor(m => m.state1,
+new SelectList(Enum.GetValues(typeof(state))),
+"Select State") <br />
+            @Html.ValidationMessageFor(x => x.salary) <br />*@
+            <input id="Submit1" type="submit" value="submit" />
+
+        }
+        <br/>
+        <!--<table>
+            <tr>
+                <td>CustID </td>
+                <td>Custname </td>
+            </tr>-->
+
+            @*@foreach (Customer obj in Model.customers)
+            {
+                <tr>
+                    <td>@obj.custid</td>
+                    <td>@obj.custname></td>
+                </tr>
+            }*@
+        <!--</table>
+        </div>-->
+    <div>
+        <h2>Using Partial View</h2>
+        @foreach(var item in Model.customers)
+
+            {
+                @Html.Partial("_Customer", item);
+
+           
+        }    </div>
+    <div>
+        <h2>Using render Partial View</h2>
+        @foreach (var item in Model.customers)
+
+        {
+          
+
+            { Html.RenderPartial("_Customer", item); }
+        }
+    </div>
+</body>
+</html>

@@ -1,0 +1,25 @@
+﻿@model mvc_entity.ViewModel.vmcust_order
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>GetData</title>
+</head>
+<body>
+    <div>
+        <form action="newview" method="post">
+            <input id="Text1" name="custid" type="text" />
+            <input id="Text2" name="custname" type="text" />
+            <input id="Text3" name="orderName" type="text" />
+            <input id="Submit1" type="submit" value="submit" />
+        </form>
+        <asp:Label runat="server" Text="Label"></asp:Label>
+    </div>
+</body>
+</html>

@@ -1,0 +1,24 @@
+﻿@model mvc_entity.ViewModel.vmcust_order
+    @using mvc_entity;
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>NewView</title>
+</head>
+<body>
+    <div>
+        <i> Customer ID:</i> @Model.cust.custid <br />
+        <i> Customer Name:</i>   @Model.cust.custname<br />
+        <i> Customer orderName:</i> @Model.order.orderName<br />
+        <i>Date:</i>@Model.date <br/>
+
+
+    </div>
+</body>
+</html>

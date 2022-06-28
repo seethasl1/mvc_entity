@@ -1,0 +1,24 @@
+﻿@model mvc_entity.Models.Customer
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>DisplayCustomer</title>
+</head>
+<body>
+    <div>
+        <i> Customer ID:</i> @Model.custid <br/>
+        <i> Customer Name:</i>   @Model.custname<br />
+        @*<i> Customer Salary:</i> @Model.salary<br />
+        <i>Department:</i>@Model.select_dept*@
+
+    </div>
+    
+</body>
+</html>
